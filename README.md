@@ -1,8 +1,18 @@
 # best-practices
-a collection of common approaches to software development practices and designs
-
-## version 0.0.1-SNAPSHOT
-Multi-module project setup with kafka listeners and rest endpoints
+I am hoping for this repository to serve several purposes
+* An example of common Spring Boot integration patterns in terms of setting up 
+  * Http Endpoints and Clients (using swagger)
+  * Kafka Consumers and producers
+  * Databases and Caches
+  * etc
+* An example of common code design patterns how and why to use them
+  * strategy pattern
+  * adapter pattern
+  * factory pattern
+* A place to explain my preferred approaches to things
+  * Url-based versioning of APIs
+  * Avoid using @Service and @Autowired annotations
+  * Use interfaces in constructors (your tests will thank you)
 
 ### To Run:
 
@@ -10,8 +20,10 @@ Multi-module project setup with kafka listeners and rest endpoints
 
 `mvn clean install && (cd core && mvn spring-boot:run)`
 
-`curl -i http://localhost:8080/sample`
+### Swagger UI location: http://localhost:8080/swagger-ui/index.html
 
-`curl --header "Content-Type: application/json" --request POST --data 'this is the message' http://localhost:8080/sample`
+## version 0.0.1-SNAPSHOT
+Multi-module project setup with kafka listeners and rest endpoints
 
-`echo "this is the message" | kafka-console-producer --broker-list "localhost:29092,localhost:39092" --topic "sample-input"`
+## version 0.0.2-SNAPSHOT
+Utilizing OAS swagger file to generate controllers, and implementing swagger ui
