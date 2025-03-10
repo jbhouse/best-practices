@@ -24,7 +24,8 @@ public class Endpoints implements SampleApi {
   public ResponseEntity<String> postSampleResponse(String body) {
     try {
       System.out.println("postSampleResponse");
-      return new ResponseEntity<>(sampleService.postSampleResponse(body), HttpStatus.OK);
+      String sr = sampleService.postSampleResponse(body);
+      return new ResponseEntity<>(sr, HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }

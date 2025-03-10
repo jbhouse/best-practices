@@ -32,7 +32,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-<!--            <scope>test</scope>-->
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>compile</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
@@ -65,16 +71,12 @@
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/external.yaml</inputSpec>
                             <generatorName>java</generatorName>
-                            <library>webclient</library>
+                            <library>restclient</library>
                             <apiPackage>com.moorhouse</apiPackage>
                             <modelPackage>com.moorhouse</modelPackage>
                             <useTags>true</useTags>
                             <configOptions>
                                 <useJakartaEe>true</useJakartaEe>
-<!--                                <generateModelTests>false</generateModelTests>-->
-<!--                                <interfaceOnly>true</interfaceOnly>-->
-<!--                                <generateBuilders>true</generateBuilders>-->
-<!--                                <generateModels>false</generateModels>-->
                             </configOptions>
                         </configuration>
                     </execution>
