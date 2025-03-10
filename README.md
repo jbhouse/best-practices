@@ -27,3 +27,6 @@ Multi-module project setup with kafka listeners and rest endpoints
 
 ## version 0.0.2-SNAPSHOT
 Utilizing OAS swagger file to generate controllers, and implementing swagger ui
+
+## version 0.0.3-SNAPSHOT
+Implement wiremock standalone docker container and utilized to mock external systems
