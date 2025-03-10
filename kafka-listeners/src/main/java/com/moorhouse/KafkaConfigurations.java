@@ -20,7 +20,7 @@ import java.util.Map;
 
 @EnableKafka
 @Configuration
-public class Configurations {
+public class KafkaConfigurations {
 
   @Bean
   KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> kafkaListenerContainerFactory() {

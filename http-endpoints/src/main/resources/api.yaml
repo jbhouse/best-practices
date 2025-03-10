@@ -1,0 +1,68 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Swagger Spec
+  license:
+    name: MIT
+#servers:
+#  - url: localhost:8080
+paths:
+  /v1/sample:
+    get:
+      summary: Sample Response
+      operationId: getSampleResponse
+      tags:
+        - sample
+      responses:
+        200:
+          description: Our sample response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: example get
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Post Sample body
+      operationId: postSampleResponse
+      tags:
+        - sample
+      requestBody:
+        description: sample post body
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+              example: example post body
+      responses:
+        201:
+          description: Sample response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: example post response
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

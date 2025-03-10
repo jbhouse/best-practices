@@ -7,15 +7,15 @@ info:
 #servers:
 #  - url: localhost:8080
 paths:
-  /v1/sample:
+  /v1/external:
     get:
       summary: Sample Response
       operationId: getSampleResponse
       tags:
-        - sample
+        - external
       responses:
         200:
-          description: Our sample response
+          description: External response
           content:
             text/plain:
               schema:
@@ -31,9 +31,9 @@ paths:
       summary: Post Sample body
       operationId: postSampleResponse
       tags:
-        - sample
+        - external
       requestBody:
-        description: sample post body
+        description: External post body
         required: true
         content:
           text/plain:

@@ -1,0 +1,36 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/v1/external"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "version": 1,
+          "message": "external get"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/v1/external"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "version": 1,
+          "message": "external post"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

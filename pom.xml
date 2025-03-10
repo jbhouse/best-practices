@@ -5,7 +5,7 @@
 
 	<groupId>com.moorhouse</groupId>
 	<artifactId>samples</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>samples</name>
 	<description>Common enterprise patterns for software development</description>
 	<packaging>pom</packaging>
@@ -31,7 +31,10 @@
 		<module>core</module>
 		<module>kafka-listeners</module>
 		<module>http-endpoints</module>
-	</modules>
+        <module>wire-mock</module>
+		<module>services</module>
+        <module>http-clients</module>
+    </modules>
 	<dependencyManagement>
 		<dependencies>
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
@@ -53,11 +56,24 @@
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${springboot.version}</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-webflux</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
 			<dependency>
 				<groupId>org.springframework.kafka</groupId>
 				<artifactId>spring-kafka</artifactId>
 				<version>3.3.3</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.12.1</version>
 			</dependency>
 
 			<dependency>
@@ -68,6 +84,16 @@
 			<dependency>
 				<groupId>com.moorhouse</groupId>
 				<artifactId>http-endpoints</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.moorhouse</groupId>
+				<artifactId>services</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.moorhouse</groupId>
+				<artifactId>http-clients</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
@@ -95,11 +121,24 @@
 				<artifactId>jakarta.validation-api</artifactId>
 				<version>3.1.1</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+			<dependency>
+				<groupId>jakarta.annotation</groupId>
+				<artifactId>jakarta.annotation-api</artifactId>
+				<version>3.0.0</version>
+			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
 			<dependency>
 				<groupId>org.springdoc</groupId>
 				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 				<version>2.8.5</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.github.tomakehurst/wiremock -->
+			<dependency>
+				<groupId>com.github.tomakehurst</groupId>
+				<artifactId>wiremock</artifactId>
+				<version>3.0.1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
