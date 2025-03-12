@@ -33,3 +33,6 @@ Implement wiremock standalone docker container and utilized to mock external sys
 
 ## version 0.0.4-SNAPSHOT
 Add @SpringBootTest e2e tests that leverage wiremock embedded server
+
+## version 0.0.5-SNAPSHOT
+Update @SpringBootTest e2e tests to leverage testRestTemplate to test endpoints/controllers
