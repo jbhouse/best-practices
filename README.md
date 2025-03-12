@@ -30,3 +30,6 @@ Utilizing OAS swagger file to generate controllers, and implementing swagger ui
 
 ## version 0.0.3-SNAPSHOT
 Implement wiremock standalone docker container and utilized to mock external systems
+
+## version 0.0.4-SNAPSHOT
+Add @SpringBootTest e2e tests that leverage wiremock embedded server
