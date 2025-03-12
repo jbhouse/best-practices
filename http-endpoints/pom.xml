@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.moorhouse</groupId>
         <artifactId>samples</artifactId>
-        <version>0.0.5-SNAPSHOT</version>
+        <version>0.0.6-SNAPSHOT</version>
     </parent>
 
     <artifactId>http-endpoints</artifactId>
