@@ -12,10 +12,9 @@ public class Listeners {
   public Listeners(KafkaTemplate<String, String> kafkaTemplate) {
     this.kafkaTemplate = kafkaTemplate;
   }
-
-  @KafkaListener(topics = "sample-input", containerFactory = "kafkaListenerContainerFactory")
+  @KafkaListener(topics = "${kafka.sample.input.topic:sample-input}", containerFactory = "kafkaListenerContainerFactory")
   void printSampleMessage(ConsumerRecord<String, String> kafkaRecord) {
     System.out.println("consumed from sample-input: " + kafkaRecord.value());
-    kafkaTemplate.sendDefault(kafkaRecord.value());
+    kafkaTemplate.sendDefault(kafkaRecord.value() + " to the sample output topic");
   }
 }
