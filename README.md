@@ -36,3 +36,6 @@ Add @SpringBootTest e2e tests that leverage wiremock embedded server
 
 ## version 0.0.5-SNAPSHOT
 Update @SpringBootTest e2e tests to leverage testRestTemplate to test endpoints/controllers
+
+## version 0.0.6-SNAPSHOT
+Update @SpringBootTest e2e tests to leverage embedded kafka broker
