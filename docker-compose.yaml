@@ -1,5 +1,13 @@
 version: "3.8"
 services:
+  best-practices:
+    image: best-practices
+    build: .
+    depends_on:
+      - kafka-1
+      - kafka-2
+      - wire-mock
+
   wire-mock:
     build: ./wire-mock
     ports:

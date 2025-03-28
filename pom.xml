@@ -5,7 +5,7 @@
 
 	<groupId>com.moorhouse</groupId>
 	<artifactId>samples</artifactId>
-	<version>0.0.6-SNAPSHOT</version>
+	<version>0.0.7-SNAPSHOT</version>
 	<name>samples</name>
 	<description>Common enterprise patterns for software development</description>
 	<packaging>pom</packaging>
@@ -191,6 +191,7 @@
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${springboot.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.openapitools</groupId>

@@ -39,3 +39,6 @@ Update @SpringBootTest e2e tests to leverage testRestTemplate to test endpoints/
 
 ## version 0.0.6-SNAPSHOT
 Update @SpringBootTest e2e tests to leverage embedded kafka broker
+
+## version 0.0.7-SNAPSHOT
+Dockerize application and set up run config to debug container
