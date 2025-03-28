@@ -22,7 +22,8 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConfigurations {
-  @Value("${kafka.bootstrap.servers}")
+//  "#{''}" prevents splitting on commas as would normally be done with @Value
+  @Value("#{'${kafka.bootstrap.servers:kafka-1:9092,kafka-2:9092}'}")
   private String bootstrapServers;
   @Value("${kafka.sample.output.topic:sample-output}")
   private String outputTopic;
