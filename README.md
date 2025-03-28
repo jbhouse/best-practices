@@ -42,3 +42,7 @@ Update @SpringBootTest e2e tests to leverage embedded kafka broker
 
 ## version 0.0.7-SNAPSHOT
 Dockerize application and set up run config to debug container
+
+## version 0.0.8-SNAPSHOT
+Set up run config for local application properties
+Set up config volume for docker application properties and mount in compose
