@@ -46,3 +46,7 @@ Dockerize application and set up run config to debug container
 ## version 0.0.8-SNAPSHOT
 Set up run config for local application properties
 Set up config volume for docker application properties and mount in compose
+
+## version 0.1.0-SNAPSHOT
+Setting up adapter pattern
+Setting up factory pattern

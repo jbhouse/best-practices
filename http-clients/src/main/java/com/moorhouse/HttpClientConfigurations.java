@@ -13,4 +13,10 @@ public class HttpClientConfigurations {
     apiClient.setBasePath("http://localhost:8081");
     return new ExternalApi(apiClient);
   }
+  @Bean
+  ExternalCarApi carApi() {
+    ApiClient apiClient = new ApiClient(RestClient.create());
+    apiClient.setBasePath("http://localhost:8081");
+    return new ExternalCarApi(apiClient);
+  }
 }

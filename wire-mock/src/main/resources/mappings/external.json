@@ -31,6 +31,40 @@
           "Content-Type": "application/json"
         }
       }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/v1/cars/honda"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "basePrice": 10000,
+          "tariff": 2000,
+          "model": "Accord"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/v1/cars/ford"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "basePrice": 10000,
+          "rebate": 2000,
+          "model": "Focus"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
     }
   ]
 }

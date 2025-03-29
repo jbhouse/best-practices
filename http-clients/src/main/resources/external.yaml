@@ -7,6 +7,32 @@ info:
 #servers:
 #  - url: localhost:8080
 paths:
+  /v1/cars/honda:
+    get:
+      summary: Get a Honda
+      operationId: getHonda
+      tags:
+        - externalCar
+      responses:
+        200:
+          description: Honda
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Honda"
+  /v1/cars/ford:
+    get:
+      summary: Get a Ford
+      operationId: getFord
+      tags:
+        - externalCar
+      responses:
+        200:
+          description: Ford
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Ford"
   /v1/external:
     get:
       summary: Sample Response
@@ -56,6 +82,34 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
+    Honda:
+      required:
+        - basePrice
+        - tariff
+        - model
+      properties:
+        basePrice:
+          type: integer
+          format: int32
+        tariff:
+          type: integer
+          format: int32
+        model:
+          type: string
+    Ford:
+      required:
+        - basePrice
+        - rebate
+        - model
+      properties:
+        basePrice:
+          type: integer
+          format: int32
+        rebate:
+          type: integer
+          format: int32
+        model:
+          type: string
     Error:
       required:
         - code
