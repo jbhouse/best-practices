@@ -3,6 +3,8 @@ services:
   best-practices:
     image: best-practices
     build: .
+    volumes:
+      - ./config-volume:/config-volume
     depends_on:
       - kafka-1
       - kafka-2
