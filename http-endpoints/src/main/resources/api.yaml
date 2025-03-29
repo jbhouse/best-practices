@@ -7,6 +7,26 @@ info:
 #servers:
 #  - url: localhost:8080
 paths:
+  /v1/cars/{make}:
+    get:
+      summary: Get a car
+      operationId: getCar
+      tags:
+        - car
+      parameters:
+        - in: path
+          name: make
+          required: true
+          schema:
+            type: string
+            enum: [ford, honda]
+      responses:
+        200:
+          description: no
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Car"
   /v1/sample:
     get:
       summary: Sample Response
@@ -56,6 +76,20 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
+    Car:
+      required:
+        - price
+        - model
+      properties:
+        price:
+          type: integer
+          format: int32
+        tariff:
+          type: integer
+          format: int32
+        model:
+          type: string
+
     Error:
       required:
         - code
