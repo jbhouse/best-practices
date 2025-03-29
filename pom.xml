@@ -30,7 +30,6 @@
 	<modules>
 		<module>core</module>
 		<module>kafka-listeners</module>
-		<module>http-endpoints</module>
         <module>wire-mock</module>
 		<module>services</module>
         <module>http-clients</module>

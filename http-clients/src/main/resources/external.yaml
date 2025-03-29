@@ -12,7 +12,7 @@ paths:
       summary: Get a Honda
       operationId: getHonda
       tags:
-        - car
+        - externalCar
       responses:
         200:
           description: Honda
@@ -25,7 +25,7 @@ paths:
       summary: Get a Ford
       operationId: getFord
       tags:
-        - car
+        - externalCar
       responses:
         200:
           description: Ford
