@@ -1,4 +1,4 @@
-package com.moorhouse.models;
+package com.moorhouse.adapters;
 
 public interface Vehicle {
   Integer getPrice();

@@ -33,7 +33,8 @@
         <module>wire-mock</module>
 		<module>services</module>
         <module>http-clients</module>
-    </modules>
+		<module>http-endpoints</module>
+	</modules>
 	<dependencyManagement>
 		<dependencies>
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
@@ -111,6 +112,11 @@
 			<dependency>
 				<groupId>com.moorhouse</groupId>
 				<artifactId>http-clients</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.moorhouse</groupId>
+				<artifactId>http-endpoints</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
