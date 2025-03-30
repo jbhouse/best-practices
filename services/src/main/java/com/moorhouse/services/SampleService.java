@@ -16,7 +16,7 @@ public class SampleService implements SampleApiDelegate {
   public ResponseEntity<String> getSampleResponse() {
     try {
       System.out.println("getSampleResponse");
-      return new ResponseEntity<>(externalApi.getSampleResponse(), HttpStatus.OK);
+      return new ResponseEntity<>("sample response: " + externalApi.getSampleResponse(), HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -26,7 +26,8 @@ public class SampleService implements SampleApiDelegate {
     try {
       System.out.println("postSampleResponse");
       String sr = externalApi.postSampleResponse(body);
-      return new ResponseEntity<>(sr, HttpStatus.OK);
+      return new ResponseEntity<>("sample post body: input\n" +
+          "sample response body: " + sr, HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }

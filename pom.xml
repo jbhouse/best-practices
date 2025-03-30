@@ -105,11 +105,6 @@
 			</dependency>
 			<dependency>
 				<groupId>com.moorhouse</groupId>
-				<artifactId>http-endpoints</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.moorhouse</groupId>
 				<artifactId>services</artifactId>
 				<version>${project.version}</version>
 			</dependency>
