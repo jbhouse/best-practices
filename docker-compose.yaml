@@ -3,6 +3,8 @@ services:
   best-practices:
     image: best-practices
     build: .
+    ports:
+      - "8080:8080"
     volumes:
       - ./config-volume:/config-volume
     depends_on:

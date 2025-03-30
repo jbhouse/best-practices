@@ -18,7 +18,10 @@ paths:
           name: make
           required: true
           schema:
-            $ref: "#/components/schemas/Make"
+            type: string
+            enum:
+              - ford
+              - honda
       responses:
         200:
           description: no
@@ -75,20 +78,12 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
-    Make:
-      type: string
-      enum:
-        - ford
-        - honda
     Car:
       required:
         - price
         - model
       properties:
         price:
-          type: integer
-          format: int32
-        tariff:
           type: integer
           format: int32
         model:

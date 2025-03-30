@@ -46,6 +46,10 @@
         </dependency>
         <dependency>
             <groupId>com.moorhouse</groupId>
+            <artifactId>wire-mock</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.moorhouse</groupId>
             <artifactId>http-endpoints</artifactId>
         </dependency>
 

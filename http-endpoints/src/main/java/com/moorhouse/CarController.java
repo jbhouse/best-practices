@@ -1,25 +1,20 @@
-package com.moorhouse.services;
+package com.moorhouse;
 
-import com.moorhouse.*;
-import com.moorhouse.models.Vehicle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.moorhouse.adapters.Vehicle;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
-@Service
-public class CarService implements CarApiDelegate {
-  private final Logger log = LoggerFactory.getLogger(CarService.class);
-  private final CarFactory carFactory;
-  public CarService(CarFactory carFactory) {
+@RestController
+public class CarController implements CarApi {
+  private final Carfactory carFactory;
+  public CarController(Carfactory carFactory) {
     this.carFactory = carFactory;
   }
   @Override
-  public ResponseEntity<Car> getCar(Make make) {
-    log.info("Handling request to get car by make: {}", make);
+  public ResponseEntity<Car> getCar(String make) {
     try {
       Optional<Vehicle> vehicle = carFactory.getCarByMake(make);
       if (vehicle.isPresent()) {

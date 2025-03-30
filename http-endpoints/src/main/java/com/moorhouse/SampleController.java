@@ -1,22 +1,20 @@
-package com.moorhouse.services;
+package com.moorhouse;
 
-import com.moorhouse.ExternalApi;
-import com.moorhouse.SampleApiDelegate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
-@Service
-public class SampleService implements SampleApiDelegate {
-  private final ExternalApi externalApi;
-  public SampleService(ExternalApi externalApi) {
-    this.externalApi = externalApi;
+@RestController
+public class SampleController implements SampleApi {
+  private final SampleService sampleServiceImpl;
+  public SampleController(SampleService sampleServiceImpl) {
+    this.sampleServiceImpl = sampleServiceImpl;
   }
   @Override
   public ResponseEntity<String> getSampleResponse() {
     try {
       System.out.println("getSampleResponse");
-      return new ResponseEntity<>(externalApi.getSampleResponse(), HttpStatus.OK);
+      return new ResponseEntity<>(sampleServiceImpl.getSampleResponse(), HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -25,7 +23,7 @@ public class SampleService implements SampleApiDelegate {
   public ResponseEntity<String> postSampleResponse(String body) {
     try {
       System.out.println("postSampleResponse");
-      String sr = externalApi.postSampleResponse(body);
+      String sr = sampleServiceImpl.postSampleResponse(body);
       return new ResponseEntity<>(sr, HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
