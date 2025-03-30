@@ -14,9 +14,9 @@ public class CarController implements CarApi {
     this.carFactory = carFactory;
   }
   @Override
-  public ResponseEntity<Car> getCar(Make make) {
+  public ResponseEntity<Car> getCar(String make) {
     try {
-      Optional<Vehicle> vehicle = carFactory.getCarByMake(make.getValue());
+      Optional<Vehicle> vehicle = carFactory.getCarByMake(make);
       if (vehicle.isPresent()) {
         return new ResponseEntity<>(new Car(vehicle.get().getPrice(), vehicle.get().getModel()), HttpStatus.OK);
       } else {
