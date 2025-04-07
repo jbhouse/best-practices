@@ -53,3 +53,6 @@ Setting up factory pattern
 
 ## version 0.1.1-SNAPSHOT
 Setting up the ability to debug docker image
+
+## version 0.1.2-SNAPSHOT
+Setting up logging

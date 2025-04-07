@@ -4,6 +4,8 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +24,8 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConfigurations {
-//  "#{''}" prevents splitting on commas as would normally be done with @Value
+  Logger log = LoggerFactory.getLogger(KafkaConfigurations.class);
+  //  "#{''}" prevents splitting on commas as would normally be done with @Value
   @Value("#{'${kafka.bootstrap.servers}'}")
   private String bootstrapServers;
   @Value("${kafka.sample.output.topic:sample-output}")
@@ -36,9 +39,9 @@ public class KafkaConfigurations {
 
   @Bean
   public ConsumerFactory<String, String> consumerFactory() {
-    System.out.println("*************");
-    System.out.println("bootstrapServers: " + bootstrapServers);
-    System.out.println("*************");
+    log.info("+++++++++++++");
+    log.info("bootstrapServers: {}", bootstrapServers);
+    log.info("+++++++++++++");
     Map<String, Object> props = new HashMap<>();
     props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
     props.put(ConsumerConfig.GROUP_ID_CONFIG, "sample");
