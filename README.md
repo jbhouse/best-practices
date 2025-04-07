@@ -56,3 +56,6 @@ Setting up the ability to debug docker image
 
 ## version 0.1.2-SNAPSHOT
 Setting up logging
+
+## version 0.1.3-SNAPSHOT
+Split up docker compose
