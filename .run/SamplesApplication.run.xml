@@ -5,7 +5,7 @@
     <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=local" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.moorhouse.*" />
+        <option name="PATTERN" value="com.moorhouse.logging.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
